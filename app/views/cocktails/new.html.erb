@@ -1,0 +1,12 @@
+<h1>Create a new Cocktail</h1>
+
+<%# <%= render 'form', cocktails: @cocktails %> 
+
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :ingredients, collection: Ingredient.all.order(:name) %>
+  <%= f.input :description, input_html:  %> 
+  <%# {value: ''} %>
+
+  <%= f.submit %>
+<% end %>
